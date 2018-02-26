@@ -111,7 +111,7 @@ public class SentitSentimentAnalyzer extends IPlugin<Message, Message, SentitSen
                             try {
                                 response = getService().classify(request);
                                 // for each message, set the result
-                                for (Message message : messages) {
+                                for (Message message : toProcessMessages) {
                                     message.setSentiment(response.getSentimentForMessage(message));
                                 }
                                 remainingAttempts = 0;
